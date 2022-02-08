@@ -3,7 +3,7 @@
     package="th.co.toei.pokedex">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
