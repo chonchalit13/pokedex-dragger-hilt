@@ -64,13 +64,7 @@ class PokedexActivity : BaseActivity() {
         pokedexAdapter = PokedexAdapter()
 
         binding.recyclerViewPokemonList.apply {
-            layoutManager =
-                if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) LinearLayoutManager(
-                    context,
-                    LinearLayoutManager.VERTICAL,
-                    false
-                )
-                else GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = pokedexAdapter
         }
     }

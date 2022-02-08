@@ -18,10 +18,30 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("pokedex_dragger_hilt_keystore")
+            storePassword "Chonchalit@13"
+            keyAlias "Chonchalit"
+            keyPassword "Chonchalit@13"
+        }
+
+        debug {
+            storeFile file("pokedex_dragger_hilt_keystore")
+            storePassword "Chonchalit@13"
+            keyAlias "Chonchalit"
+            keyPassword "Chonchalit@13"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug{
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
